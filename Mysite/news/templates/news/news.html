@@ -1,0 +1,21 @@
+{%extends 'mainApp/wrapper.html'%}
+
+{%block title %} News {%endblock%}
+
+    {%block content %}
+        <div class="features">
+        <h1>Виробники краВтового пива</h1>
+            {%if news %}
+                {% for el in news %}
+                <div class="alert alert-warning">
+                    <h3>{{el.title}}</h3>
+                    <p>{{el.about}}</p>
+                    <a href = "{% url 'beer-delete' el.id %}" class = "btn btn-denger">Удалить пивцо</a>
+                </div>
+                {%endfor%}
+            {% else %}
+            <p> Нету пива, лол, поляны не будет((</p>
+            {%endif%}
+        </div>
+    {%endblock%}
+

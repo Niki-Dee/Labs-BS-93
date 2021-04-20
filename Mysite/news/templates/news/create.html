@@ -1,0 +1,20 @@
+{%extends 'mainApp/wrapper.html'%}
+
+{%block title %} Форма по дополнению пива {%endblock%}
+
+    {%block content %}
+        <div class="features">
+        <h1>Форма по дополнению пива</h1>
+            <form method="post">
+                {%csrf_token %}
+                {{ form.title }}<br>
+                {{ form.components }}<br>
+                {{ form.about }} <br>
+                {{ form.date }} <br>
+                {{ form.full_text }} <br>
+                <span>{{error}}</span>
+                <button class="btn btn-success", type="submit">Добавить</button>
+            </form>
+        </div>
+    {%endblock%}
+
